@@ -1,6 +1,6 @@
 # Count Out
 
-A command-line application for solving the Josephus Problem. 
+A command-line application for solving the Josephus Problem.
 
 # Usage
 
