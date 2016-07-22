@@ -1,4 +1,6 @@
-# Count Out
+[![Build Status](https://travis-ci.org/epileptic-fish/josephus.svg?branch=master)](https://travis-ci.org/epileptic-fish/josephus)
+
+# Josephus
 
 A command-line application for solving the Josephus Problem.
 
@@ -8,7 +10,7 @@ The application can be run using SBT and takes three parameters:
 
 * `n` - the number of people in the circle. n>=1.
 * `k` - the step size. k>=1.
-* `i` - the starting position. This is zero-indexed and optional, defaulting to 0. 1<=i<n
+* `i` - the starting position. This is zero-indexed and optional, defaulting to 0. 0<=i<n
 
 It can be run as follows:
 

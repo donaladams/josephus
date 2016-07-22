@@ -1,11 +1,10 @@
-package com.nitro
+package com.nitro.josephus
 
-import com.nitro.josephus.Josephus
 import com.nitro.josephus.InputValidation._
 import com.nitro.josephus.Josephus.ProblemInput
 
+import scalaz.Scalaz._
 import scalaz._
-import Scalaz._
 
 object Main extends App {
 
