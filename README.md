@@ -6,9 +6,9 @@ A command-line application for solving the Josephus Problem.
 
 The application can be run using SBT and takes three parameters:
 
-* `n` - the number of people in the circle
-* `k` - the step size
-* `i` - the starting position. This is zero-indexed and optional, defaulting to 0.
+* `n` - the number of people in the circle. n>=1.
+* `k` - the step size. k>=1.
+* `i` - the starting position. This is zero-indexed and optional, defaulting to 0. 1<=i<n
 
 It can be run as follows:
 
