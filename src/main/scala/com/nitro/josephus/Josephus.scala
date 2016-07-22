@@ -6,7 +6,7 @@ object Josephus {
 
   /**
     * Simple class representing input to the Josephus problem
- *
+    *
     * @param n the number of people in the circle
     * @param k the step size for killing
     * @param i the starting position in the circle, starting at 0
@@ -18,6 +18,13 @@ object Josephus {
     */
   type CountOut = ProblemInput => Int
 
+  /**
+    * This the only public function in the Josephus object, allowing it to be called like a function.
+    * This is used to solve the Josephus problem for a given input.
+    *
+    * @param input the problem input
+    * @return the solution to the Josephus problem, where the people are zero-indexed
+    */
   def apply(input: ProblemInput): Int = {
     val countOutStrategy: CountOut = strategy(input)
     countOutStrategy(input)
