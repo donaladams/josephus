@@ -60,7 +60,9 @@ object Josephus {
   }
 
   /**
-    * O(n) procedural algorithm for the general case
+    * O(n^2) procedural algorithm for the general case. This is used mainly for
+    * verifying other approaches. According to the documentation for ListBuffer, the remove
+    * method may be linear, which gives us the quadratic running time.
     */
   private[josephus] val simulatorSolution = new CountOut {
     override def apply(input: ProblemInput): Int = {
@@ -76,7 +78,7 @@ object Josephus {
 
   /**
     * Helper function for transforming a solution where i=0 to one with an arbitrary starting position
- *
+    *
     * @param n the number of people in the circle
     * @param i the new starting position
     * @param originalSurvivor the solution where i=0
