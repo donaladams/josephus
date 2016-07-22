@@ -5,7 +5,7 @@ import org.specs2.mutable._
 
 
 /**
-  * Unit tests for handling and validation of input arguments
+  * Unit tests for Josephus solver
   */
 class JosephusSpec extends Specification {
 
@@ -61,6 +61,23 @@ class JosephusSpec extends Specification {
       Josephus.generalSolution(input) must_== survivor
     }
 
+    // Invariant for k=1
+    "give n-1 where k=1" in {
+      val inputs = inputRange(1 to 1000, k = 1)
+      val enumerated = inputs.map(p => (p.n, Josephus(p)))
+      for {
+        (n, survivor) <- enumerated
+      } yield survivor must_== n - 1
+    }
+
+    // Invariant for k=2
+    "give an even result where k=2" in {
+      val inputs = inputRange(1 to 1000, k = 2)
+      val survivors = inputs.map(Josephus.apply)
+      for {
+        survivor <- survivors
+      } yield survivor % 2 must_== 0
+    }
   }
 
   // Tests for offsetting starting position
@@ -82,7 +99,7 @@ class JosephusSpec extends Specification {
 
   }
 
-   ///Tests for deciding which strategy to use based on input
+   // Tests for deciding which strategy to use based on input
   "Josepehus.strategy" should {
 
     "Provide the k=1 algorithm when ProblemInput.k=1" in {
@@ -136,4 +153,5 @@ class JosephusSpec extends Specification {
 
   def inputRange(nRange: Range, k: Int, i: Int = 0): Seq[ProblemInput] =
     nRange.map(ProblemInput(_, k, i))
+
 }

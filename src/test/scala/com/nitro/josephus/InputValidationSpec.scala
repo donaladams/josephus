@@ -4,6 +4,9 @@ import com.nitro.josephus.Josephus.ProblemInput
 import org.specs2.mutable.Specification
 import scalaz._
 
+/**
+  * Unit tests for handling and validation of input arguments.
+  */
 class InputValidationSpec extends Specification {
 
   val goodInput = ProblemInput(n = 10, k = 2, i = 2)
@@ -51,7 +54,7 @@ class InputValidationSpec extends Specification {
       result.isFailure must beTrue
     }
 
-    "return Failure when i > n" in {
+    "return Failure when i>n" in {
       val badInput = goodInput.copy(n = 6, i = 10)
       val result: ValidationNel[String, ProblemInput] = InputValidation.validate(badInput)
       result.isFailure must beTrue
